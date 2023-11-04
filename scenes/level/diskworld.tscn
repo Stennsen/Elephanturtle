@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd650bfu5ntqp"]
+[gd_scene load_steps=6 format=3 uid="uid://bd650bfu5ntqp"]
 
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="Texture2D" uid="uid://c0lxpelb6535w" path="res://assets/graphics/level/tileset.png" id="2_f2qoh"]
+[ext_resource type="PackedScene" uid="uid://c2gp01ppn3bs2" path="res://scenes/entities/player/player.tscn" id="3_5jrfv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn7e4"]
 texture = ExtResource("2_f2qoh")
@@ -233,4 +234,8 @@ format = 2
 layer_0/tile_data = PackedInt32Array(65524, 0, 0, 65525, 65536, 0, 65526, 131072, 0, 65527, 196608, 0, 65528, 262144, 0, 65529, 327680, 0, 65530, 393216, 0, 65531, 458752, 0, 65532, 524288, 0, 65533, 589824, 0, 65534, 655360, 0, 65535, 720896, 0, 0, 131072, 0, 1, 196608, 0, 2, 262144, 0, 3, 327680, 0, 4, 655360, 0, 5, 720896, 0, 6, 131072, 0, 7, 196608, 0, 8, 262144, 0, 9, 131072, 0, 10, 196608, 0, 11, 65536, 327681)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
 zoom = Vector2(0.3, 0.3)
+
+[node name="Player" parent="." instance=ExtResource("3_5jrfv")]
+position = Vector2(12, -315)
