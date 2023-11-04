@@ -360,10 +360,12 @@ ignore_rotation = false
 zoom = Vector2(0.3, 0.3)
 
 [node name="Player" parent="." instance=ExtResource("3_08eds")]
-position = Vector2(-1570, -9)
+position = Vector2(0, 0)
 
-[node name="Daisy" parent="." instance=ExtResource("4_er5p5")]
-position = Vector2(12, -123)
+[node name="plant1" type="Area2D" parent="."]
+position = Vector2(772, -124)
+collision_layer = 2
+metadata/_edit_group_ = true
 
 [node name="Daisy2" parent="." instance=ExtResource("4_er5p5")]
 position = Vector2(682, -122)
