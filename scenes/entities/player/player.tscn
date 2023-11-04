@@ -1,15 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2gp01ppn3bs2"]
+[gd_scene load_steps=4 format=3 uid="uid://c2gp01ppn3bs2"]
 
 [ext_resource type="Script" path="res://scenes/entities/player/player.gd" id="1_obn3s"]
+[ext_resource type="Texture2D" uid="uid://oxlf0sb6mt0h" path="res://assets/graphics/entities/player/Ghost.png" id="2_boh6u"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bl8k"]
-size = Vector2(61, 85)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_in8ss"]
+radius = 135.0
+height = 354.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Ghost"]]
+position = Vector2(-60, -95)
 script = ExtResource("1_obn3s")
+metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Ghost" type="Sprite2D" parent="."]
+position = Vector2(19.2, 18.212)
+scale = Vector2(0.33, 0.315)
+texture = ExtResource("2_boh6u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
-shape = SubResource("RectangleShape2D_2bl8k")
+position = Vector2(-9, 41)
+shape = SubResource("CapsuleShape2D_in8ss")

@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd650bfu5ntqp"]
+[gd_scene load_steps=8 format=3 uid="uid://bd650bfu5ntqp"]
 
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="Texture2D" uid="uid://c0lxpelb6535w" path="res://assets/graphics/level/tileset.png" id="2_f2qoh"]
+[ext_resource type="PackedScene" uid="uid://c2gp01ppn3bs2" path="res://scenes/entities/player/player.tscn" id="3_08eds"]
+[ext_resource type="Texture2D" uid="uid://b1bvtkolgoxcs" path="res://assets/graphics/entities/plants/plant1.png" id="4_q63bq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn7e4"]
 texture = ExtResource("2_f2qoh")
@@ -345,6 +347,8 @@ tile_size = Vector2i(256, 256)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nn7e4")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kpcd"]
+
 [node name="diskworld" type="Node2D"]
 script = ExtResource("1_buow7")
 
@@ -354,4 +358,21 @@ format = 2
 layer_0/tile_data = PackedInt32Array(131060, 0, 0, 131061, 65536, 0, 131062, 131072, 0, 131063, 196608, 0, 131064, 262144, 0, 131065, 327680, 0, 131066, 393216, 0, 131067, 458752, 0, 131068, 524288, 0, 131069, 589824, 0, 131070, 655360, 0, 131071, 720896, 0, 196597, 65536, 1, 196598, 131072, 1, 262134, 131072, 2, 196599, 196608, 1, 262135, 196608, 2, 327671, 196608, 3, 196600, 262144, 1, 262136, 262144, 2, 196601, 327680, 1, 262137, 327680, 2, 327673, 327680, 3, 196602, 393216, 1, 262138, 393216, 2, 327674, 393216, 3, 196603, 458752, 1, 262139, 458752, 2, 327675, 458752, 3, 196604, 524288, 1, 262140, 524288, 2, 327676, 524288, 3, 196605, 589824, 1, 262141, 589824, 2, 327677, 589824, 3, 196606, 655360, 1, 262142, 655360, 2, 327678, 655360, 3, 196607, 720896, 1, 327679, 720896, 3, 131073, 393216, 131072, 196609, 393216, 131073, 327672, 262144, 3, 262143, 720896, 2, 65536, 327680, 1, 65547, 65536, 393217, 131082, 131072, 327682, 131081, 196608, 393218, 196617, 196608, 262147, 262144, 589824, 131075, 262146, 458752, 262147, 262145, 524288, 196611, 196616, 327680, 3, 196615, 262144, 3, 196614, 393216, 196611, 196613, 196608, 393218, 262149, 196608, 262147, 262147, 393216, 196611, 262148, 262144, 196611, 65546, 327680, 1, 65545, 589824, 2, 65544, 524288, 2, 131080, 327680, 0, 196608, 327680, 0, 131072, 524288, 2, 131074, 589824, 131072, 196610, 589824, 131073, 131075, 524288, 131072, 196611, 524288, 131073, 196612, 327680, 0, 65542, 589824, 131074, 65541, 524288, 131074, 131076, 131072, 262145, 131077, 262144, 1, 131078, 327680, 2, 65537, 524288, 2, 65538, 589824, 2, 65539, 393216, 2, 65540, 458752, 2, 131079, 327680, 1, 65543, 131072, 262145)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
 zoom = Vector2(0.3, 0.3)
+
+[node name="Player" parent="." instance=ExtResource("3_08eds")]
+position = Vector2(-1873, -408)
+
+[node name="plant1" type="Area2D" parent="."]
+position = Vector2(390, -394)
+collision_layer = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plant1"]
+shape = SubResource("CapsuleShape2D_2kpcd")
+
+[node name="Sprite2D" type="Sprite2D" parent="plant1"]
+texture = ExtResource("4_q63bq")
+
+[connection signal="body_entered" from="plant1" to="Player" method="_on_plant_1_body_entered"]
