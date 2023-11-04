@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd650bfu5ntqp"]
+[gd_scene load_steps=9 format=3 uid="uid://bd650bfu5ntqp"]
 
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="Texture2D" uid="uid://c0lxpelb6535w" path="res://assets/graphics/level/tileset.png" id="2_f2qoh"]
 [ext_resource type="PackedScene" uid="uid://c2gp01ppn3bs2" path="res://scenes/entities/player/player.tscn" id="3_08eds"]
+[ext_resource type="Script" path="res://scenes/level/plant1.gd" id="4_pf23i"]
 [ext_resource type="Texture2D" uid="uid://b1bvtkolgoxcs" path="res://assets/graphics/entities/plants/plant1.png" id="4_q63bq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn7e4"]
@@ -246,6 +247,7 @@ position = Vector2(-1873, -408)
 [node name="plant1" type="Area2D" parent="."]
 position = Vector2(390, -394)
 collision_layer = 2
+script = ExtResource("4_pf23i")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="plant1"]
