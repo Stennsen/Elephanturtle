@@ -248,7 +248,7 @@ zoom = Vector2(0.3, 0.3)
 position = Vector2(-1873, -408)
 
 [node name="Plant1" type="StaticBody2D" parent="."]
-position = Vector2(-105, -384)
+position = Vector2(-118, -409)
 physics_material_override = SubResource("PhysicsMaterial_n3bw8")
 metadata/_edit_group_ = true
 
