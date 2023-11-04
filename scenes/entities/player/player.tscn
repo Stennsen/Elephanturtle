@@ -7,7 +7,7 @@
 radius = 135.0
 height = 354.0
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D" groups=["Ghost"]]
 position = Vector2(-60, -95)
 script = ExtResource("1_obn3s")
 metadata/_edit_group_ = true

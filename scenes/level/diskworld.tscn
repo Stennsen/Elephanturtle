@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bd650bfu5ntqp"]
+[gd_scene load_steps=8 format=3 uid="uid://bd650bfu5ntqp"]
 
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="Texture2D" uid="uid://c0lxpelb6535w" path="res://assets/graphics/level/tileset.png" id="2_f2qoh"]
@@ -226,11 +226,7 @@ tile_size = Vector2i(256, 256)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nn7e4")
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n3bw8"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v1nfd"]
-radius = 86.0
-height = 610.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kpcd"]
 
 [node name="diskworld" type="Node2D"]
 script = ExtResource("1_buow7")
@@ -247,14 +243,15 @@ zoom = Vector2(0.3, 0.3)
 [node name="Player" parent="." instance=ExtResource("3_08eds")]
 position = Vector2(-1873, -408)
 
-[node name="Plant1" type="StaticBody2D" parent="."]
-position = Vector2(-118, -409)
-physics_material_override = SubResource("PhysicsMaterial_n3bw8")
+[node name="plant1" type="Area2D" parent="."]
+position = Vector2(390, -394)
+collision_layer = 2
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant1"]
-position = Vector2(1, 41)
-shape = SubResource("CapsuleShape2D_v1nfd")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plant1"]
+shape = SubResource("CapsuleShape2D_2kpcd")
 
-[node name="Sprite2D" type="Sprite2D" parent="Plant1"]
+[node name="Sprite2D" type="Sprite2D" parent="plant1"]
 texture = ExtResource("4_q63bq")
+
+[connection signal="body_entered" from="plant1" to="Player" method="_on_plant_1_body_entered"]
