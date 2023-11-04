@@ -41,11 +41,14 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("Player"):
-		print("seed planted")
 
-'''func _on_plant_body_entered(body):
-	if body.is_in_group("Player"):'''
+
 		
-		
+
+
+func _on_plant_1_body_entered(body):
+	if body.is_in_group("Ghost"):
+		print("touched plant - could be cropped with E")
+		if Input.is_action_pressed("crop"):
+			print("cropped")
+			
