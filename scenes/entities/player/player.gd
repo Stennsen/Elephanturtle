@@ -49,6 +49,5 @@ func _physics_process(delta):
 func _on_plant_1_body_entered(body):
 	if body.is_in_group("Ghost"):
 		print("touched plant - could be cropped with E")
-		if Input.is_action_pressed("crop"):
-			print("cropped")
+		
 			
