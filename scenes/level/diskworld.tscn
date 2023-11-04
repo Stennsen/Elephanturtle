@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd650bfu5ntqp"]
+[gd_scene load_steps=7 format=3 uid="uid://bd650bfu5ntqp"]
 
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="Texture2D" uid="uid://c0lxpelb6535w" path="res://assets/graphics/level/tileset.png" id="2_f2qoh"]
 [ext_resource type="PackedScene" uid="uid://c2gp01ppn3bs2" path="res://scenes/entities/player/player.tscn" id="3_08eds"]
-[ext_resource type="Texture2D" uid="uid://b1bvtkolgoxcs" path="res://assets/graphics/entities/plants/plant1.png" id="4_q63bq"]
+[ext_resource type="PackedScene" uid="uid://dx3ap5ow707py" path="res://scenes/entities/plants/daisy/daisy.tscn" id="4_er5p5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn7e4"]
 texture = ExtResource("2_f2qoh")
@@ -347,8 +347,6 @@ tile_size = Vector2i(256, 256)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nn7e4")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kpcd"]
-
 [node name="diskworld" type="Node2D"]
 script = ExtResource("1_buow7")
 
@@ -369,10 +367,8 @@ position = Vector2(772, -124)
 collision_layer = 2
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="plant1"]
-shape = SubResource("CapsuleShape2D_2kpcd")
+[node name="Daisy2" parent="." instance=ExtResource("4_er5p5")]
+position = Vector2(682, -122)
 
-[node name="Sprite2D" type="Sprite2D" parent="plant1"]
-texture = ExtResource("4_q63bq")
-
-[connection signal="body_entered" from="plant1" to="Player" method="_on_plant_1_body_entered"]
+[node name="Daisy3" parent="." instance=ExtResource("4_er5p5")]
+position = Vector2(1474, -124)

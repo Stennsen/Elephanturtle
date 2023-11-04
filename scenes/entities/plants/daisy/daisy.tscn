@@ -1,15 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx3ap5ow707py"]
+[gd_scene load_steps=5 format=3 uid="uid://dx3ap5ow707py"]
 
-[ext_resource type="Script" path="res://scenes/entities/plants/elephantflower/elephantflower.gd" id="1_p8771"]
+[ext_resource type="Script" path="res://scenes/entities/plants/daisy/daisy.gd" id="1_taigx"]
+[ext_resource type="Texture2D" uid="uid://b1bvtkolgoxcs" path="res://assets/graphics/entities/plants/plant1.png" id="1_xyqf3"]
+[ext_resource type="AudioStream" uid="uid://csc7ib68hputh" path="res://scenes/entities/plants/daisy/stepping_on_leaf.wav" id="2_1pvqb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptw8f"]
-size = Vector2(20, 55)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qjpdj"]
+radius = 77.0
+height = 630.0
 
-[node name="Elephantflower" type="StaticBody2D"]
-script = ExtResource("1_p8771")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Daisy" type="Area2D"]
+script = ExtResource("1_taigx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -17.5)
-shape = SubResource("RectangleShape2D_ptw8f")
+position = Vector2(-1, 38)
+shape = SubResource("CapsuleShape2D_qjpdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xyqf3")
+
+[node name="crop_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_1pvqb")
