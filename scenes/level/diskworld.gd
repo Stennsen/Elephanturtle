@@ -29,16 +29,18 @@ func calculate_balance():
 			total_weight -= ZONE_MODIFIERS[flower_zone] * flower.WEIGHT
 	
 	balance = total_weight
+
 func _on_Daisy_body_entered(body: PhysicsBody2D) -> void:
 	if body.name == "Player":
 		# Connect the daisy to the player
 		body.crop.connect(self._on_crop_daisy)
+
 func _on_crop_daisy(daisy: Node) -> void:
 	# Remove the daisy from the scene
 	daisy.queue_free()
 	# Play the corresponding audio
 	crop_sound.play()
-	flower_list.remove_at(flower_list.find(daisy))
+	flower_list.pop_at(flower_list.find(daisy))
 	
 func rotate_camera():
 	var camera = get_node("Camera2D")
@@ -60,8 +62,6 @@ func _process(delta):
 	spawn_timer()
 	calculate_balance()
 	rotate_camera()
-	print(balance)
-	pass
 
 func spawn_timer():
 	daisy_timer()
@@ -84,7 +84,6 @@ func spawn_flower():
 	daisy.rotation = direction
 	flower_list.push_back(daisy)
 	print(flower_list)
-	spawn_sound.play()
 	add_child(daisy)
 	
 	
