@@ -37,6 +37,7 @@ func rotate_camera():
 	var incoming_rotation = rotation_diff/INBALANCE_MOVEMENT_DIVIDER
 	camera.rotate(incoming_rotation)
 	get_node("Background").rotate(incoming_rotation)
+	get_node("Turtle").rotate(incoming_rotation)
 
 
 # Called when the node enters the scene tree for the first time.
