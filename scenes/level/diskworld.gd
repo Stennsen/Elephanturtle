@@ -8,9 +8,10 @@ const INBALANCE_MOVEMENT_DIVIDER = 100	# dictates the tipping speed of the platf
 const DAISY_MAX_TIMER = 60*10 # The Maximum amount of time between daisy spawns
 const DAISY_MIN_TIMER = 10*10 # The Maximum amount of time between daisy spawns
 
-const ELEPHANT_MAX_TIMER = 60*40 # The Maximum amount of time between daisy spawns
-const ELEPHANT_MIN_TIMER = 10*40 # The Maximum amount of time between daisy spawns
+const ELEPHANT_MAX_TIMER = 60*30 # The Maximum amount of time between daisy spawns
+const ELEPHANT_MIN_TIMER = 10*30 # The Maximum amount of time between daisy spawns
 const ELEPHANT_WEIGHT = 0.05
+
 
 @export var daisy_scene: PackedScene
 @export var elephant_scene: PackedScene
@@ -23,6 +24,8 @@ var balance = -0.45;
 var daisy_countdown = 0
 var elephant_countdown = 0
 var random = RandomNumberGenerator.new()
+
+var finished = false
 
 var flower_list = []
 var elephant_list = []
@@ -88,22 +91,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_node("Turtle").play("default")
-	spawn_timer()
-	calculate_balance()
-	rotate_camera()
+	if not finished:
+		get_node("RabbitDead").hide()
+		get_node("Turtle").play("default")
+		spawn_timer()
+		calculate_balance()
+		rotate_camera()
+		print(get_node("Player").global_position.x)
 	if (abs(balance) > MAX_INBALANCE):
-		lose_game()
+		finish_game()
+	if (abs(get_node("Player").global_position.x)) > 3100:
+		finish_game()
 	if (len(elephant_list) >= 4):
-		win_game()
+		finish_game()
 	pass
 
-func lose_game():
-	pass
 
-func win_game():
-	pass
-
+func finish_game():
+	finished = true
+	get_node("RabbitDead").show()
+	get_node("Player").hide()
 
 func spawn_timer():
 	daisy_timer()
@@ -139,7 +146,6 @@ func spawn_elephant():
 	daisy.rotation = direction
 	elephant_list.push_back(daisy)
 	get_node("Elephants").add_child(daisy)
-	print(elephant_list)
 	
 
 func elephant_timer():

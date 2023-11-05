@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bd650bfu5ntqp"]
+[gd_scene load_steps=46 format=3 uid="uid://bd650bfu5ntqp"]
 
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="PackedScene" uid="uid://dd5lg8qqc5suo" path="res://scenes/entities/plants/plant1/plant_1.tscn" id="2_82fbq"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://b05pr1vejpu4y" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00022.png" id="32_buhht"]
 [ext_resource type="Texture2D" uid="uid://chykskns448nc" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00023.png" id="33_0evth"]
 [ext_resource type="Texture2D" uid="uid://ctfw61rpyijpb" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00024.png" id="34_5fvmg"]
+[ext_resource type="Texture2D" uid="uid://4xuwn8hi1pmq" path="res://assets/graphics/level/death.png" id="35_xoj7m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cm3h"]
 texture = ExtResource("2_qflb5")
@@ -602,6 +603,11 @@ shape = SubResource("RectangleShape2D_8deuf")
 [node name="unbalanced_sound" type="AudioStreamPlayer2D" parent="."]
 
 [node name="balanced_sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="RabbitDead" type="Sprite2D" parent="."]
+position = Vector2(3, -473)
+scale = Vector2(2.0883, 2.0883)
+texture = ExtResource("35_xoj7m")
 
 [connection signal="timeout" from="Flowertimer" to="." method="_on_flowertimer_timeout"]
 [connection signal="body_entered" from="Border_Right" to="." method="_on_border_right_body_entered"]
