@@ -128,7 +128,7 @@ func spawn_flower():
 	flower_list.push_back(daisy)
 	print(flower_list)
 	spawn_sound.play()
-	add_child(daisy)
+	get_node("Daisies").add_child(daisy)
 	
 func spawn_elephant():
 	var daisy = elephant_scene.instantiate()
