@@ -54,7 +54,7 @@ func _on_crop_daisy(daisy: Node) -> void:
 	daisy.queue_free()
 	# Play the corresponding audio
 	crop_sound.play()
-	flower_list.pop_at(flower_list.find(daisy))
+	flower_list.remove_at(flower_list.find(daisy))
 	
 func rotate_camera():
 	var camera = get_node("Camera2D")
@@ -63,6 +63,7 @@ func rotate_camera():
 	var incoming_rotation = rotation_diff/INBALANCE_MOVEMENT_DIVIDER
 	camera.rotate(incoming_rotation)
 	get_node("Background").rotate(incoming_rotation)
+	get_node("LowerBackground").rotate(incoming_rotation)
 	get_node("Turtle").rotate(incoming_rotation)
 
 

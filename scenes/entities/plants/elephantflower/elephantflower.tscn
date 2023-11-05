@@ -1,15 +1,53 @@
-[gd_scene load_steps=12 format=3 uid="uid://dx3ap5ow707py"]
+[gd_scene load_steps=55 format=3 uid="uid://dx3ap5ow707py"]
 
 [ext_resource type="Script" path="res://scenes/entities/plants/elephantflower/elephantflower.gd" id="1_p8771"]
+[ext_resource type="Texture2D" uid="uid://ciri8py3qwtoi" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0000.png" id="2_2du7h"]
 [ext_resource type="Texture2D" uid="uid://darmssi770yhf" path="res://assets/graphics/entities/plants/elephantflower.png" id="2_muyj2"]
-[ext_resource type="Texture2D" uid="uid://cylgrmea6l5k7" path="res://assets/graphics/entities/plants/231104_FGJ_elephant_animation0039.png" id="3_v2dux"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptw8f"]
-size = Vector2(20, 55)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mbrgn"]
-atlas = ExtResource("3_v2dux")
-region = Rect2(0, 0, 1000, 1000)
+[ext_resource type="Texture2D" uid="uid://dohy77erfcwd0" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0001.png" id="3_mffet"]
+[ext_resource type="Texture2D" uid="uid://bj2ic0n3pwcaf" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0002.png" id="4_ua4ik"]
+[ext_resource type="Texture2D" uid="uid://ccmvm0cvarykb" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0003.png" id="5_tb0qe"]
+[ext_resource type="Texture2D" uid="uid://bu4ngwsthu1b8" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0004.png" id="6_byl2n"]
+[ext_resource type="Texture2D" uid="uid://b4a2hoxpu3cbd" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0005.png" id="7_blrr8"]
+[ext_resource type="Texture2D" uid="uid://ddx8250720txg" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0006.png" id="8_afl00"]
+[ext_resource type="Texture2D" uid="uid://d232qfmlohxtk" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0007.png" id="9_pr3d0"]
+[ext_resource type="Texture2D" uid="uid://opo4jbbov36e" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0008.png" id="10_lueru"]
+[ext_resource type="Texture2D" uid="uid://dsr4y5hjb037u" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0009.png" id="11_v47pk"]
+[ext_resource type="Texture2D" uid="uid://ci6gv7aqapd2" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0010.png" id="12_w2tyb"]
+[ext_resource type="Texture2D" uid="uid://ckdwoynryd8ju" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0011.png" id="13_xni66"]
+[ext_resource type="Texture2D" uid="uid://m2jx7umspva3" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0012.png" id="14_pk66l"]
+[ext_resource type="Texture2D" uid="uid://cq3yp44x0axyb" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0013.png" id="15_hsl7a"]
+[ext_resource type="Texture2D" uid="uid://bl08tooeukhog" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0014.png" id="16_jh67a"]
+[ext_resource type="Texture2D" uid="uid://b4vhg7yjv8jrn" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0015.png" id="17_hi530"]
+[ext_resource type="Texture2D" uid="uid://bd2tl3kscctu2" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0016.png" id="18_2aj3l"]
+[ext_resource type="Texture2D" uid="uid://e28kvou35104" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0017.png" id="19_q3fce"]
+[ext_resource type="Texture2D" uid="uid://daw3gyh6v6sto" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0018.png" id="20_o2fs2"]
+[ext_resource type="Texture2D" uid="uid://ddnni4m4ml468" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0019.png" id="21_qfc1a"]
+[ext_resource type="Texture2D" uid="uid://crcbsv5ios8l7" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0020.png" id="22_f7ih4"]
+[ext_resource type="Texture2D" uid="uid://cpv2ahqaood3x" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0021.png" id="23_vmxlx"]
+[ext_resource type="Texture2D" uid="uid://cgxulc4fjjuk1" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0022.png" id="24_u00r1"]
+[ext_resource type="Texture2D" uid="uid://bfhdbv8e4p5ln" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0023.png" id="25_k4dr4"]
+[ext_resource type="Texture2D" uid="uid://c4mj1vsskpw20" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0024.png" id="26_m1v5w"]
+[ext_resource type="Texture2D" uid="uid://d3v8pn2wbg6f7" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0025.png" id="27_plsfn"]
+[ext_resource type="Texture2D" uid="uid://bci1s2g2beix" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0026.png" id="28_mnram"]
+[ext_resource type="Texture2D" uid="uid://blaulw15f8xx0" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0027.png" id="29_dmpl7"]
+[ext_resource type="Texture2D" uid="uid://jpfxbybkj712" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0028.png" id="30_6cxyw"]
+[ext_resource type="Texture2D" uid="uid://sj8hcqrich3s" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0029.png" id="31_c6wmd"]
+[ext_resource type="Texture2D" uid="uid://ccb6unik25ykh" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0030.png" id="32_s60vt"]
+[ext_resource type="Texture2D" uid="uid://scfwb22fxpui" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0031.png" id="33_71xpq"]
+[ext_resource type="Texture2D" uid="uid://ccdaw8unv3hyv" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0032.png" id="34_pxup6"]
+[ext_resource type="Texture2D" uid="uid://dt7x345or72l4" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0033.png" id="35_mqn1b"]
+[ext_resource type="Texture2D" uid="uid://blv3n84lfdnyx" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0034.png" id="36_nohso"]
+[ext_resource type="Texture2D" uid="uid://744wgw1vgbjk" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0035.png" id="37_mwsxa"]
+[ext_resource type="Texture2D" uid="uid://dprmssncsjk1e" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0036.png" id="38_vh4wr"]
+[ext_resource type="Texture2D" uid="uid://b0cibae6x7msj" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0037.png" id="39_hww2u"]
+[ext_resource type="Texture2D" uid="uid://cf5o7wj2g8p18" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0038.png" id="40_p822r"]
+[ext_resource type="Texture2D" uid="uid://dsqstrwu7cdb0" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0039.png" id="41_jw1pg"]
+[ext_resource type="Texture2D" uid="uid://bfbpk8b8i6iur" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0040.png" id="42_7q1q6"]
+[ext_resource type="Texture2D" uid="uid://bvxsljo583x87" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0041.png" id="43_rf1n8"]
+[ext_resource type="Texture2D" uid="uid://cunoooskxkbmy" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0042.png" id="44_6duls"]
+[ext_resource type="Texture2D" uid="uid://b8p53jkkdk13y" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0043.png" id="45_bvv0w"]
+[ext_resource type="Texture2D" uid="uid://bwchftpc1ncfe" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0044.png" id="46_3x4sw"]
+[ext_resource type="Texture2D" uid="uid://5o3ifplpd4vk" path="res://assets/graphics/entities/plants/231105_walkcycle_elephant_upscaled-20231105T133046Z-001/231105_walkcycle_elephant_upscaled/231105_FGJ_elephant_walkcycle_upscaled0045.png" id="47_e2oxf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5elc3"]
 atlas = ExtResource("2_muyj2")
@@ -35,7 +73,142 @@ region = Rect2(2048, 0, 512, 768)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mbrgn")
+"texture": ExtResource("2_2du7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mffet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ua4ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tb0qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_byl2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_blrr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_afl00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pr3d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lueru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v47pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_w2tyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xni66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pk66l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hsl7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jh67a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hi530")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2aj3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q3fce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_o2fs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qfc1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_f7ih4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vmxlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_u00r1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_k4dr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_m1v5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_plsfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mnram")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dmpl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_6cxyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_c6wmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_s60vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_71xpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_pxup6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_mqn1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_nohso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_mwsxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_vh4wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_hww2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_p822r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_jw1pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_7q1q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_rf1n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_6duls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_bvv0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_3x4sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_e2oxf")
 }],
 "loop": true,
 "name": &"adult",
@@ -65,10 +238,12 @@ animations = [{
 [node name="Elephantflower" type="StaticBody2D"]
 script = ExtResource("1_p8771")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -17.5)
-shape = SubResource("RectangleShape2D_ptw8f")
-
-[node name="Growth" type="AnimatedSprite2D" parent="."]
+[node name="Adult" type="AnimatedSprite2D" parent="."]
+position = Vector2(36, 935)
 sprite_frames = SubResource("SpriteFrames_ecplk")
 animation = &"adult"
+
+[node name="Growing" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.54094, 3.54094)
+sprite_frames = SubResource("SpriteFrames_ecplk")
+animation = &"growing"
