@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bd650bfu5ntqp"]
+[gd_scene load_steps=18 format=3 uid="uid://bd650bfu5ntqp"]
 
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="PackedScene" uid="uid://dd5lg8qqc5suo" path="res://scenes/entities/plants/plant1/plant_1.tscn" id="2_82fbq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cifwf8dtm45mh" path="res://assets/graphics/level/231104_FGJ_turtle_animation_ae_00048.png" id="7_kq1tf"]
 [ext_resource type="AudioStream" uid="uid://csc7ib68hputh" path="res://scenes/entities/plants/daisy/stepping_on_leaf.wav" id="8_0k0lq"]
 [ext_resource type="PackedScene" uid="uid://dx3ap5ow707py" path="res://scenes/entities/plants/elephantflower/elephantflower.tscn" id="9_rscom"]
+[ext_resource type="AudioStream" uid="uid://0md5npg0tutx" path="res://scenes/entities/plants/daisy/flower_spawned.wav" id="10_qgu5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cm3h"]
 texture = ExtResource("2_qflb5")
@@ -394,6 +395,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nn7e4")
 sources/1 = SubResource("TileSetAtlasSource_typdf")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8deuf"]
+size = Vector2(98, 167)
+
 [node name="diskworld" type="Node2D" groups=["Disc World"]]
 script = ExtResource("1_buow7")
 daisy_scene = ExtResource("2_82fbq")
@@ -439,4 +443,25 @@ position = Vector2(566, -161)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_0k0lq")
 
+[node name="spawn_sound_file" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_qgu5k")
+
+[node name="Border_Right" type="Area2D" parent="."]
+position = Vector2(2947, 246)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Right"]
+position = Vector2(39, -73.5)
+shape = SubResource("RectangleShape2D_8deuf")
+
+[node name="Border_Left" type="Area2D" parent="."]
+position = Vector2(-2941, 247)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Left"]
+position = Vector2(39, -73.5)
+shape = SubResource("RectangleShape2D_8deuf")
+
 [connection signal="timeout" from="Flowertimer" to="." method="_on_flowertimer_timeout"]
+[connection signal="body_entered" from="Border_Right" to="." method="_on_border_right_body_entered"]
+[connection signal="body_entered" from="Border_Left" to="." method="_on_border_left_body_entered"]

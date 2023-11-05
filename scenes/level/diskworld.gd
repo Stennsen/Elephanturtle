@@ -10,6 +10,7 @@ const DAISY_MIN_TIMER = 10*10 # The Maximum amount of time between daisy spawns
 
 @export var daisy_scene: PackedScene
 @onready var crop_sound = $AudioStreamPlayer2D
+@onready var spawn_sound = $spawn_sound_file
 
 # tracks the balance of the world
 var balance = -0.45;
@@ -21,10 +22,7 @@ var flower_list = []
 func calculate_balance():
 	var total_weight = 0
 	for flower in flower_list:
-		if flower:
-			continue
 		var flower_zone = int(flower.global_position.x/ZONE_SPACING)
-
 		if flower_zone < 0:
 			total_weight += ZONE_MODIFIERS[flower_zone] * flower.WEIGHT
 		else:
@@ -86,9 +84,21 @@ func spawn_flower():
 	daisy.rotation = direction
 	flower_list.push_back(daisy)
 	print(flower_list)
+	spawn_sound.play()
 	add_child(daisy)
 	
 	
 
 func _on_flowertimer_timeout():
 	pass # Replace with function body.
+
+
+func _on_border_right_body_entered(body):
+	if body.is_in_group("Ghost"):
+		print("too close to the right border")
+		
+
+
+func _on_border_left_body_entered(body):
+	if body.is_in_group("Ghost"):
+		print("too close to the left border")
