@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx3ap5ow707py"]
+[gd_scene load_steps=4 format=3 uid="uid://5161kjoqnjdg"]
 
 [ext_resource type="Texture2D" uid="uid://b1bvtkolgoxcs" path="res://assets/graphics/entities/plants/plant1.png" id="1_al6w7"]
 [ext_resource type="Script" path="res://scenes/entities/plants/daisy/daisy.gd" id="1_gegsr"]

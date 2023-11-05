@@ -15,7 +15,9 @@ const ELEPHANT_WEIGHT = 0.05
 @export var daisy_scene: PackedScene
 @export var elephant_scene: PackedScene
 @onready var crop_sound = $AudioStreamPlayer2D
-
+@onready var spawn_sound = $spawn_sound_file
+@onready var unbalanced_sound = $unbalanced_sound
+@onready var balanced_sound = $balanced_sound
 # tracks the balance of the world
 var balance = -0.45;
 var daisy_countdown = 0
@@ -29,7 +31,6 @@ func calculate_balance():
 	var total_weight = 0
 	for flower in flower_list:
 		var flower_zone = int(flower.global_position.x/ZONE_SPACING)
-
 		if flower_zone < 0:
 			total_weight += ZONE_MODIFIERS[flower_zone] * flower.WEIGHT
 		else:
@@ -43,6 +44,19 @@ func calculate_balance():
 
 	
 	balance = total_weight
+	var rndnmbr = random.randf_range(0,50)
+	var balance_sign = 1
+	if rndnmbr > 35:
+		if balance < 0 and balance_sign != 1:
+			balance_sign = 1
+			unbalanced_sound.play()
+		elif balance > 0 and balance_sign != 2:
+			balance_sign = 2
+			unbalanced_sound.play()
+		else:
+			balance_sign = 3
+			balanced_sound.play()
+			
 
 func _on_Daisy_body_entered(body: PhysicsBody2D) -> void:
 	if body.name == "Player":
@@ -112,7 +126,9 @@ func spawn_flower():
 	daisy.position = daisy_spawn_location.position
 	daisy.rotation = direction
 	flower_list.push_back(daisy)
-	get_node("Daisies").add_child(daisy)
+	print(flower_list)
+	spawn_sound.play()
+	add_child(daisy)
 	
 func spawn_elephant():
 	var daisy = elephant_scene.instantiate()
@@ -133,3 +149,14 @@ func elephant_timer():
 	else:
 		elephant_countdown -= 1
 
+
+
+func _on_border_right_body_entered(body):
+	if body.is_in_group("Ghost"):
+		print("too close to the right border")
+		
+
+
+func _on_border_left_body_entered(body):
+	if body.is_in_group("Ghost"):
+		print("too close to the left border")
