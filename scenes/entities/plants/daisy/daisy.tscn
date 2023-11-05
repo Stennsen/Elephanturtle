@@ -18,6 +18,6 @@ shape = SubResource("CapsuleShape2D_1u8tm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_al6w7")
 
-[node name="crop_sound" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ctfak")
-volume_db = 1.04
+volume_db = 1.387

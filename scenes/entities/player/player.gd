@@ -10,25 +10,23 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var original_position
 
 @onready var ghost_sprite = $Ghost
+@onready var animation_player = $AnimationPlayer
 
+#func _ready():
+	# Connect the body_entered signal of each Area2D node in the parent node to the player's script
+	#get_node("ParentNode").connect("node_added", self, "on_node_added")
 
-func _ready():
-	original_position = position
+func on_node_added(node):
+	if node is Area2D:
+		node.connect("body_entered", self, "on_area2d_body_entered")
+
+func on_area2d_body_entered(area):
+	# Handle the collision event
+	print("Collision detected with ", area.name)
 
 func _physics_process(delta):
-	# Add the gravity.
-	'''if not is_on_floor():
-		velocity.y += gravity * delta'''
-
-	# floating by moving the sprite up and down
-	
-	
-	
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
-	
+	animation_player.play("float")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -40,8 +38,4 @@ func _physics_process(delta):
 		ghost_sprite.flip_h = true 
 
 	move_and_slide()
-
-
-func _on_plant_1_body_entered(body):
-	if body.is_in_group("Ghost"):
-		print("daisy: can be cropped with E")
+	

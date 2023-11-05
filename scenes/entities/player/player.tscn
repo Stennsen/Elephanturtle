@@ -1,11 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2gp01ppn3bs2"]
+[gd_scene load_steps=7 format=3 uid="uid://c2gp01ppn3bs2"]
 
 [ext_resource type="Script" path="res://scenes/entities/player/player.gd" id="1_obn3s"]
-[ext_resource type="Texture2D" uid="uid://oxlf0sb6mt0h" path="res://assets/graphics/entities/player/Ghost.png" id="2_boh6u"]
+[ext_resource type="Texture2D" uid="uid://8xfxrl340nu8" path="res://assets/graphics/entities/player/Ghost_composite.png" id="2_hhupw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_in8ss"]
 radius = 135.0
 height = 354.0
+
+[sub_resource type="Animation" id="Animation_deiib"]
+resource_name = "float"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ghost:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="Animation" id="Animation_xfxeh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ghost:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xh8hg"]
+_data = {
+"RESET": SubResource("Animation_xfxeh"),
+"float": SubResource("Animation_deiib")
+}
 
 [node name="Player" type="CharacterBody2D" groups=["Ghost"]]
 position = Vector2(-60, -95)
@@ -15,8 +53,15 @@ metadata/_edit_group_ = true
 [node name="Ghost" type="Sprite2D" parent="."]
 position = Vector2(19.2, 18.212)
 scale = Vector2(0.33, 0.315)
-texture = ExtResource("2_boh6u")
+texture = ExtResource("2_hhupw")
+hframes = 4
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 41)
 shape = SubResource("CapsuleShape2D_in8ss")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xh8hg")
+}
