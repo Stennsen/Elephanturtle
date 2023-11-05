@@ -32,10 +32,16 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	if velocity.x >= 0:
-		ghost_sprite.flip_h = false 
-	else:
-		ghost_sprite.flip_h = true 
+	var facing = false  # Initialize with a default facing direction
+
+	if velocity.x > 0:
+		facing = false
+		ghost_sprite.flip_h = facing
+	elif velocity.x < 0:
+		facing = true
+		ghost_sprite.flip_h = facing
+	
+	
 
 	move_and_slide()
 	
