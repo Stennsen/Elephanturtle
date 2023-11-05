@@ -13,13 +13,17 @@ const DAISY_MIN_TIMER = 10*10 # The Maximum amount of time between daisy spawns
 @onready var spawn_sound = $spawn_sound_file
 @onready var unbalanced_sound = $unbalanced_sound
 @onready var balanced_sound = $balanced_sound
+@onready var living_edge_sound = $living_on_the_edge_sound
+@onready var dont_fall_sound = $dont_fall_sound
 # tracks the balance of the world
 var balance = -0.45;
 var daisy_countdown = 0
 var random = RandomNumberGenerator.new()
 
 var flower_list = []
-
+var played_unbalanced_sound = false
+var played_balanced_sound = false
+var balance_sign = 1
 func calculate_balance():
 	var total_weight = 0
 	for flower in flower_list:
@@ -31,17 +35,22 @@ func calculate_balance():
 	
 	balance = total_weight
 	var rndnmbr = random.randf_range(0,50)
-	var balance_sign = 1
-	if rndnmbr > 35:
-		if balance < 0 and balance_sign != 1:
+	
+	
+
+	'if true:
+		if balance < 0 and balance_sign != 1 and not played_unbalanced_sound:
 			balance_sign = 1
 			unbalanced_sound.play()
-		elif balance > 0 and balance_sign != 2:
+			played_unbalanced_sound = true
+		elif balance > 0 and balance_sign != 2 and not played_unbalanced_sound:
 			balance_sign = 2
 			unbalanced_sound.play()
+			played_unbalanced_sound = true
 		else:
 			balance_sign = 3
 			balanced_sound.play()
+			played_unbalanced_sound = false'
 			
 
 func _on_Daisy_body_entered(body: PhysicsBody2D) -> void:
@@ -110,10 +119,10 @@ func _on_flowertimer_timeout():
 
 func _on_border_right_body_entered(body):
 	if body.is_in_group("Ghost"):
-		print("too close to the right border")
+		dont_fall_sound.play()
 		
 
 
 func _on_border_left_body_entered(body):
 	if body.is_in_group("Ghost"):
-		print("too close to the left border")
+		living_edge_sound.play()

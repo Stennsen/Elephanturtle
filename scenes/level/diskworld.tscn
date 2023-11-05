@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bd650bfu5ntqp"]
+[gd_scene load_steps=24 format=3 uid="uid://bd650bfu5ntqp"]
 
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="PackedScene" uid="uid://dd5lg8qqc5suo" path="res://scenes/entities/plants/plant1/plant_1.tscn" id="2_82fbq"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dx3ap5ow707py" path="res://scenes/entities/plants/elephantflower/elephantflower.tscn" id="9_rscom"]
 [ext_resource type="AudioStream" uid="uid://0md5npg0tutx" path="res://scenes/entities/plants/daisy/flower_spawned.wav" id="10_qgu5k"]
 [ext_resource type="AudioStream" uid="uid://i1f787sd22os" path="res://scenes/level/world_tilt_down_unbalanced.wav" id="11_ep2cl"]
+[ext_resource type="AudioStream" uid="uid://bsqv1sxlvj6a4" path="res://scenes/level/living on the edge mh.wav" id="13_n5an0"]
+[ext_resource type="AudioStream" uid="uid://c5dss5yssoj5" path="res://scenes/level/dont fall off now.wav" id="14_t0bid"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cm3h"]
 texture = ExtResource("2_qflb5")
@@ -410,7 +412,7 @@ sources/0 = SubResource("TileSetAtlasSource_nn7e4")
 sources/1 = SubResource("TileSetAtlasSource_typdf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8deuf"]
-size = Vector2(98, 167)
+size = Vector2(138, 257)
 
 [node name="diskworld" type="Node2D" groups=["Disc World"]]
 script = ExtResource("1_buow7")
@@ -475,7 +477,7 @@ position = Vector2(2947, 246)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border_Right"]
-position = Vector2(39, -73.5)
+position = Vector2(19, -118.5)
 shape = SubResource("RectangleShape2D_8deuf")
 
 [node name="Border_Left" type="Area2D" parent="."]
@@ -490,6 +492,12 @@ shape = SubResource("RectangleShape2D_8deuf")
 stream = ExtResource("11_ep2cl")
 
 [node name="balanced_sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="living_on_the_edge_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_n5an0")
+
+[node name="dont_fall_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_t0bid")
 
 [connection signal="timeout" from="Flowertimer" to="." method="_on_flowertimer_timeout"]
 [connection signal="body_entered" from="Border_Right" to="." method="_on_border_right_body_entered"]

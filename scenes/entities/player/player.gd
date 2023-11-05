@@ -24,6 +24,8 @@ func _input(event: InputEvent) -> void:
 				if daisy.overlaps_area(get_node("Area2D")):
 					# Emit the "crop" signal
 					dw._on_crop_daisy(daisy)
+					
+					
 func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")
 	animation_player.play("float")
