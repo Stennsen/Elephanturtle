@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bd650bfu5ntqp"]
+[gd_scene load_steps=15 format=3 uid="uid://bd650bfu5ntqp"]
 
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="PackedScene" uid="uid://dd5lg8qqc5suo" path="res://scenes/entities/plants/plant1/plant_1.tscn" id="2_82fbq"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c2gp01ppn3bs2" path="res://scenes/entities/player/player.tscn" id="3_08eds"]
 [ext_resource type="Texture2D" uid="uid://dbjejb4n80hw7" path="res://assets/graphics/level/gras.png" id="4_5d41t"]
 [ext_resource type="Texture2D" uid="uid://cifwf8dtm45mh" path="res://assets/graphics/level/231104_FGJ_turtle_animation_ae_00048.png" id="7_kq1tf"]
+[ext_resource type="AudioStream" uid="uid://csc7ib68hputh" path="res://scenes/entities/plants/daisy/stepping_on_leaf.wav" id="8_0k0lq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cm3h"]
 texture = ExtResource("2_qflb5")
@@ -386,7 +387,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nn7e4")
 sources/1 = SubResource("TileSetAtlasSource_typdf")
 
-[node name="diskworld" type="Node2D"]
+[node name="diskworld" type="Node2D" groups=["Disc World"]]
 script = ExtResource("1_buow7")
 daisy_scene = ExtResource("2_82fbq")
 
@@ -424,5 +425,8 @@ layer_0/tile_data = PackedInt32Array(131060, 0, 0, 131061, 65536, 0, 131062, 131
 position = Vector2(-40, 1621)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_kq1tf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_0k0lq")
 
 [connection signal="timeout" from="Flowertimer" to="." method="_on_flowertimer_timeout"]

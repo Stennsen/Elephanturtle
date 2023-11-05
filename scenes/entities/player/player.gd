@@ -12,18 +12,18 @@ var original_position
 @onready var ghost_sprite = $Ghost
 @onready var animation_player = $AnimationPlayer
 
-#func _ready():
-	# Connect the body_entered signal of each Area2D node in the parent node to the player's script
-	#get_node("ParentNode").connect("node_added", self, "on_node_added")
-
-func on_node_added(node):
-	if node is Area2D:
-		node.connect("body_entered", self, "on_area2d_body_entered")
-
-func on_area2d_body_entered(area):
-	# Handle the collision event
-	print("Collision detected with ", area.name)
-
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("crop"):
+		# Get the list of daisies
+		var dw = get_tree().get_first_node_in_group("Disc World")
+		var daisies = dw.flower_list
+		if daisies != null:
+			# Loop through the daisies
+			for daisy in daisies:
+				# Check if the player is colliding with the daisy
+				if daisy.overlaps_area(get_node("Area2D")):
+					# Emit the "crop" signal
+					dw._on_crop_daisy(daisy)
 func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")
 	animation_player.play("float")

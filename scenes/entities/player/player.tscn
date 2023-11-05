@@ -65,3 +65,9 @@ shape = SubResource("CapsuleShape2D_in8ss")
 libraries = {
 "": SubResource("AnimationLibrary_xh8hg")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-9, 41)
+shape = SubResource("CapsuleShape2D_in8ss")
