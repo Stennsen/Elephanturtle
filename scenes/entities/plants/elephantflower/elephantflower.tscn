@@ -1,15 +1,74 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx3ap5ow707py"]
+[gd_scene load_steps=12 format=3 uid="uid://dx3ap5ow707py"]
 
 [ext_resource type="Script" path="res://scenes/entities/plants/elephantflower/elephantflower.gd" id="1_p8771"]
+[ext_resource type="Texture2D" uid="uid://darmssi770yhf" path="res://assets/graphics/entities/plants/elephantflower.png" id="2_muyj2"]
+[ext_resource type="Texture2D" uid="uid://cylgrmea6l5k7" path="res://assets/graphics/entities/plants/231104_FGJ_elephant_animation0039.png" id="3_v2dux"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptw8f"]
 size = Vector2(20, 55)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbrgn"]
+atlas = ExtResource("3_v2dux")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5elc3"]
+atlas = ExtResource("2_muyj2")
+region = Rect2(0, 0, 512, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of2s1"]
+atlas = ExtResource("2_muyj2")
+region = Rect2(512, 0, 512, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tumib"]
+atlas = ExtResource("2_muyj2")
+region = Rect2(1024, 0, 512, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx3ii"]
+atlas = ExtResource("2_muyj2")
+region = Rect2(1536, 0, 512, 768)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmvmo"]
+atlas = ExtResource("2_muyj2")
+region = Rect2(2048, 0, 512, 768)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecplk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbrgn")
+}],
+"loop": true,
+"name": &"adult",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5elc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of2s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tumib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx3ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmvmo")
+}],
+"loop": false,
+"name": &"growing",
+"speed": 0.1
+}]
+
 [node name="Elephantflower" type="StaticBody2D"]
 script = ExtResource("1_p8771")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_ptw8f")
+
+[node name="Growth" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ecplk")
+animation = &"adult"
