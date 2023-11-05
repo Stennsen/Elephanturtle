@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd5lg8qqc5suo"]
+
+[ext_resource type="Script" path="res://scenes/entities/plants/daisy/daisy.gd" id="1_jk77e"]
+[ext_resource type="Texture2D" uid="uid://b1bvtkolgoxcs" path="res://assets/graphics/entities/plants/plant1.png" id="2_3xxye"]
+[ext_resource type="AudioStream" uid="uid://csc7ib68hputh" path="res://scenes/entities/plants/daisy/stepping_on_leaf.wav" id="3_45y0x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qu8at"]
+radius = 77.0
+height = 630.0
+
+[node name="plant1" type="Area2D"]
+position = Vector2(940, -166)
+collision_layer = 2
+script = ExtResource("1_jk77e")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 38)
+shape = SubResource("CapsuleShape2D_qu8at")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3xxye")
+
+[node name="crop_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_45y0x")

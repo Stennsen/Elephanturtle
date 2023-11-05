@@ -1,5 +1,6 @@
 extends Area2D
 
+const WEIGHT = 0.1
 
 @onready var crop_sound = $crop_sound
 # Called when the node enters the scene tree for the first time.
