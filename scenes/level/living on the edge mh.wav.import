@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsqv1sxlvj6a4"
+path="res://.godot/imported/living on the edge mh.wav-416952947e32d6531ff6af2cc3b04ba4.sample"
+
+[deps]
+
+source_file="res://scenes/level/living on the edge mh.wav"
+dest_files=["res://.godot/imported/living on the edge mh.wav-416952947e32d6531ff6af2cc3b04ba4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
