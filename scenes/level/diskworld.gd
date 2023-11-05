@@ -8,15 +8,22 @@ const INBALANCE_MOVEMENT_DIVIDER = 100	# dictates the tipping speed of the platf
 const DAISY_MAX_TIMER = 60*10 # The Maximum amount of time between daisy spawns
 const DAISY_MIN_TIMER = 10*10 # The Maximum amount of time between daisy spawns
 
+const ELEPHANT_MAX_TIMER = 60*40 # The Maximum amount of time between daisy spawns
+const ELEPHANT_MIN_TIMER = 10*40 # The Maximum amount of time between daisy spawns
+const ELEPHANT_WEIGHT = 0.05
+
 @export var daisy_scene: PackedScene
+@export var elephant_scene: PackedScene
 @onready var crop_sound = $AudioStreamPlayer2D
 
 # tracks the balance of the world
 var balance = -0.45;
 var daisy_countdown = 0
+var elephant_countdown = 0
 var random = RandomNumberGenerator.new()
 
 var flower_list = []
+var elephant_list = []
 
 func calculate_balance():
 	var total_weight = 0
@@ -27,6 +34,13 @@ func calculate_balance():
 			total_weight += ZONE_MODIFIERS[flower_zone] * flower.WEIGHT
 		else:
 			total_weight -= ZONE_MODIFIERS[flower_zone] * flower.WEIGHT
+	for elephant in elephant_list:
+		var elephant_zone = int(elephant.global_position.x/ZONE_SPACING)
+		if elephant_zone < 0:
+			total_weight += ZONE_MODIFIERS[elephant_zone] * ELEPHANT_WEIGHT
+		else:
+			total_weight -= ZONE_MODIFIERS[elephant_zone] * ELEPHANT_WEIGHT
+
 	
 	balance = total_weight
 
@@ -60,12 +74,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	get_node("Turtle").play("default")
 	spawn_timer()
 	calculate_balance()
 	rotate_camera()
+	if (abs(balance) > MAX_INBALANCE):
+		lose_game()
+	if (len(elephant_list) >= 4):
+		win_game()
+	pass
+
+func lose_game():
+	pass
+
+func win_game():
+	pass
+
 
 func spawn_timer():
 	daisy_timer()
+	elephant_timer()
 
 func daisy_timer():
 	if daisy_countdown <= 0:
@@ -86,7 +114,22 @@ func spawn_flower():
 	flower_list.push_back(daisy)
 	get_node("Daisies").add_child(daisy)
 	
+func spawn_elephant():
+	var daisy = elephant_scene.instantiate()
+	var daisy_spawn_location = get_node("ElephantSpawn/ElephantSpawnLocation")
+	var direction = daisy_spawn_location.rotation + PI
+	daisy_spawn_location.progress_ratio = randf()
+	daisy.position = daisy_spawn_location.position
+	daisy.rotation = direction
+	elephant_list.push_back(daisy)
+	get_node("Elephants").add_child(daisy)
+	print(elephant_list)
 	
 
-func _on_flowertimer_timeout():
-	pass # Replace with function body.
+func elephant_timer():
+	if elephant_countdown <= 0:
+		spawn_elephant()
+		elephant_countdown = random.randi_range(ELEPHANT_MIN_TIMER, ELEPHANT_MAX_TIMER)
+	else:
+		elephant_countdown -= 1
+

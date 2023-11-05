@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bd650bfu5ntqp"]
+[gd_scene load_steps=44 format=3 uid="uid://bd650bfu5ntqp"]
 
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="PackedScene" uid="uid://dd5lg8qqc5suo" path="res://scenes/entities/plants/plant1/plant_1.tscn" id="2_82fbq"]
@@ -7,9 +7,33 @@
 [ext_resource type="PackedScene" uid="uid://c2gp01ppn3bs2" path="res://scenes/entities/player/player.tscn" id="3_08eds"]
 [ext_resource type="Texture2D" uid="uid://dbjejb4n80hw7" path="res://assets/graphics/level/gras.png" id="4_5d41t"]
 [ext_resource type="Texture2D" uid="uid://bk4ik722pjust" path="res://assets/graphics/level/stars.png" id="5_yqurg"]
-[ext_resource type="Texture2D" uid="uid://cifwf8dtm45mh" path="res://assets/graphics/level/231104_FGJ_turtle_animation_ae_00048.png" id="7_kq1tf"]
 [ext_resource type="AudioStream" uid="uid://csc7ib68hputh" path="res://scenes/entities/plants/daisy/stepping_on_leaf.wav" id="8_0k0lq"]
 [ext_resource type="PackedScene" uid="uid://dx3ap5ow707py" path="res://scenes/entities/plants/elephantflower/elephantflower.tscn" id="9_rscom"]
+[ext_resource type="Texture2D" uid="uid://bvri7it5jrvao" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00000.png" id="10_4pyig"]
+[ext_resource type="Texture2D" uid="uid://rcvjfifl5c1r" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00001.png" id="11_mb0bc"]
+[ext_resource type="Texture2D" uid="uid://cmkpug2mjx48e" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00002.png" id="12_ru5ca"]
+[ext_resource type="Texture2D" uid="uid://dhlwuh8v8hdug" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00003.png" id="13_ys8hr"]
+[ext_resource type="Texture2D" uid="uid://bqy2owi3eaybq" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00004.png" id="14_6w3iq"]
+[ext_resource type="Texture2D" uid="uid://dqfyijekm7ki2" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00005.png" id="15_fgk1v"]
+[ext_resource type="Texture2D" uid="uid://duk0hph0bqccn" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00006.png" id="16_avgas"]
+[ext_resource type="Texture2D" uid="uid://bv38hdxk8g87u" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00007.png" id="17_mf2jk"]
+[ext_resource type="Texture2D" uid="uid://dhr6bxuq0f6oy" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00008.png" id="18_rlbbf"]
+[ext_resource type="Texture2D" uid="uid://cinpspdaf5ach" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00009.png" id="19_hswxa"]
+[ext_resource type="Texture2D" uid="uid://cimkykmyvr0wb" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00010.png" id="20_j8r2m"]
+[ext_resource type="Texture2D" uid="uid://ds5c0y8dvaka2" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00011.png" id="21_ixb84"]
+[ext_resource type="Texture2D" uid="uid://k5i3vntcu176" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00012.png" id="22_87src"]
+[ext_resource type="Texture2D" uid="uid://bhxn4jb6w4naf" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00013.png" id="23_l52qi"]
+[ext_resource type="Texture2D" uid="uid://bstklfueatgmr" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00014.png" id="24_5xswm"]
+[ext_resource type="Texture2D" uid="uid://bcslrbqfp2liv" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00015.png" id="25_5bpx2"]
+[ext_resource type="Texture2D" uid="uid://d245xy8ndstdv" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00016.png" id="26_hfeme"]
+[ext_resource type="Texture2D" uid="uid://j2v5bu1fuqh8" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00017.png" id="27_ycxsb"]
+[ext_resource type="Texture2D" uid="uid://crp2sncpdavow" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00018.png" id="28_hk4pb"]
+[ext_resource type="Texture2D" uid="uid://bapv3e0d6ecbo" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00019.png" id="29_0g3be"]
+[ext_resource type="Texture2D" uid="uid://cnvsh4gcusldf" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00020.png" id="30_1nia8"]
+[ext_resource type="Texture2D" uid="uid://4n8hy5mb1u04" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00021.png" id="31_l1grw"]
+[ext_resource type="Texture2D" uid="uid://b05pr1vejpu4y" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00022.png" id="32_buhht"]
+[ext_resource type="Texture2D" uid="uid://chykskns448nc" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00023.png" id="33_0evth"]
+[ext_resource type="Texture2D" uid="uid://ctfw61rpyijpb" path="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00024.png" id="34_5fvmg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cm3h"]
 texture = ExtResource("2_qflb5")
@@ -47,7 +71,7 @@ sources/0 = SubResource("TileSetAtlasSource_4sqog")
 
 [sub_resource type="Curve2D" id="Curve2D_bgthr"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2815, -164, 0, 0, 0, 0, -2701, -168)
+"points": PackedVector2Array(0, 0, 0, 0, 1739.35, 22, 0, 0, 0, 0, -1851.58, 13)
 }
 point_count = 2
 
@@ -407,9 +431,93 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nn7e4")
 sources/1 = SubResource("TileSetAtlasSource_typdf")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_cvvw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4pyig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mb0bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ru5ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ys8hr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6w3iq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fgk1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_avgas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mf2jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rlbbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hswxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_j8r2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ixb84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_87src")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_l52qi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5xswm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_5bpx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_hfeme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ycxsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_hk4pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_0g3be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_1nia8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_l1grw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_buhht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0evth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_5fvmg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="diskworld" type="Node2D" groups=["Disc World"]]
 script = ExtResource("1_buow7")
 daisy_scene = ExtResource("2_82fbq")
+elephant_scene = ExtResource("9_rscom")
 
 [node name="Background" type="TileMap" parent="."]
 position = Vector2(-45, 680)
@@ -421,14 +529,10 @@ layer_0/tile_data = PackedInt32Array(-524302, 65536, 0, -458766, 0, 0, -393230, 
 
 [node name="Elephants" type="Node2D" parent="."]
 
-[node name="Elephantflower" parent="Elephants" instance=ExtResource("9_rscom")]
-position = Vector2(647, -289)
-scale = Vector2(0.35471, 0.35471)
-
 [node name="LowerBackground" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_yp6q3")
 format = 2
-layer_0/tile_data = PackedInt32Array(196616, 0, 1, 196617, 0, 1, 196615, 0, 1, 196614, 65536, 0, 196613, 65536, 0, 196612, 65536, 0, 196618, 0, 1, 196611, 65536, 0, 196610, 65536, 0, 196609, 65536, 0, 262145, 65536, 0, 262146, 65536, 0, 262147, 65536, 0, 262148, 65536, 0, 262149, 65536, 0, 262150, 65536, 0, 262151, 0, 1, 262152, 0, 1, 262153, 0, 1, 327688, 65536, 0, 327689, 65536, 0, 327690, 0, 0, 327691, 65536, 0, 327692, 65536, 0, 327687, 0, 1, 327686, 0, 1, 327685, 0, 0, 327684, 65536, 0, 327683, 65536, 0, 327682, 65536, 0, 327681, 65536, 0, 327680, 65536, 0, 393215, 65536, 0, 393214, 65536, 0, 393213, 65536, 0, 262144, 65536, 0, 327679, 65536, 0, 327678, 65536, 0, 393212, 65536, 0, 393211, 65536, 0, 393210, 65536, 0, 327674, 65536, 0, 327675, 65536, 0, 327676, 65536, 0, 327677, 65536, 0, 327673, 65536, 0, 327672, 65536, 0, 327671, 65536, 0, 262141, 65536, 0, 262140, 65536, 0, 262139, 65536, 0, 262138, 65536, 0, 262137, 65536, 0, 262136, 65536, 0, 262135, 65536, 0, 262134, 65536, 0, 327670, 65536, 0, 196601, 65536, 0, 196602, 65536, 0, 196603, 65536, 0, 196604, 65536, 0, 196600, 65536, 0, 196599, 65536, 0, 196598, 65536, 0, 196597, 65536, 0, 196596, 0, 0, 131064, 65536, 0, 131063, 65536, 0, 196595, 65536, 0, 262133, 65536, 0, 327669, 65536, 0, 393207, 0, 0, 393206, 65536, 0, 393205, 0, 0, 393208, 65536, 0, 393209, 65536, 0, 262154, 0, 1, 393220, 65536, 0, 393219, 65536, 0, 393218, 65536, 0, 262156, 0, 1, 262155, 0, 1, 196619, 0, 1, 131082, 65536, 0, 131083, 65536, 0, 65547, 65536, 0, 65546, 65536, 0, 131081, 65536, 0, 131080, 65536, 0, 131079, 65536, 0, 262143, 65536, 0, 262142, 65536, 0, 262132, 0, 0, 131061, 65536, 0, 131060, 65536, 0, 327668, 65536, 0, 393204, 65536, 0, 393224, 65536, 1, 458745, 65536, 1, 458742, 0, 1, 524282, 65536, 0, 524280, 65536, 0, 589817, 65536, 0, 524281, 65536, 0, 720889, 65536, 0, 655353, 65536, 0, 786425, 0, 1, 786424, 0, 1, 720888, 65536, 0, 720887, 65536, 0, 655351, 65536, 0, 720886, 65536, 0, 655350, 65536, 0, 786420, 0, 1, 720884, 0, 1, 786418, 0, 1, 720882, 0, 1, 589812, 0, 1, 524276, 0, 1, 589810, 0, 1, 524274, 0, 1, 327666, 0, 1, 262130, 0, 1, 655366, 0, 1, 589830, 0, 1, 720902, 0, 1, 720903, 0, 1, 655367, 0, 1, 655364, 0, 1, 720900, 0, 1, 720899, 0, 1, 720901, 0, 1, 655363, 0, 1, 655362, 0, 1, 655365, 0, 1, 655361, 0, 1, 720897, 0, 1, 720896, 0, 1, 786431, 0, 1, 786430, 0, 1, 786429, 0, 1, 786428, 0, 1, 786427, 0, 1, 720891, 0, 1, 720892, 0, 1, 720893, 0, 1, 720894, 0, 1, 720895, 0, 1, 786426, 0, 1, 655372, 0, 1, 655373, 0, 1, 589837, 0, 1, 524301, 0, 1, 524302, 0, 1, 458766, 0, 1, 589836, 0, 1, 655371, 0, 1, 589835, 0, 1, 524300, 0, 1, 458765, 0, 1, 393230, 0, 1, 327694, 65536, 0, 262158, 0, 1, 262157, 65536, 0, 196621, 65536, 0, 196620, 0, 1, 196622, 65536, 0, 589831, 0, 1, 589832, 0, 1, 524296, 0, 1, 589827, 0, 1, 589826, 0, 1, 589825, 0, 1, 589824, 0, 1, 655359, 0, 1, 655358, 0, 1, 655357, 0, 1, 655356, 0, 1, 655355, 0, 1, 589820, 0, 1, 589821, 0, 1, 589822, 0, 1, 589823, 0, 1, 524287, 0, 1, 458752, 0, 1, 393216, 0, 1, 458751, 0, 1, 524286, 0, 1, 524285, 0, 1, 524284, 0, 1, 458749, 0, 1, 458748, 0, 1, 458747, 0, 1, 524283, 0, 1, 589813, 0, 1, 524277, 0, 1, 524278, 0, 1)
+layer_0/tile_data = PackedInt32Array(196616, 0, 1, 196615, 0, 1, 196614, 65536, 0, 196613, 65536, 0, 196612, 65536, 0, 196611, 65536, 0, 196610, 65536, 0, 196609, 65536, 0, 262145, 65536, 0, 262146, 65536, 0, 262147, 65536, 0, 262148, 65536, 0, 262149, 65536, 0, 262150, 65536, 0, 262151, 0, 1, 262152, 0, 1, 262153, 0, 1, 327688, 65536, 0, 327689, 65536, 0, 327690, 0, 0, 327691, 65536, 0, 327692, 65536, 0, 327687, 0, 1, 327686, 0, 1, 327685, 0, 0, 327684, 65536, 0, 327683, 65536, 0, 327682, 65536, 0, 327681, 65536, 0, 327680, 65536, 0, 393215, 65536, 0, 393214, 65536, 0, 393213, 65536, 0, 262144, 65536, 0, 327679, 65536, 0, 327678, 65536, 0, 393212, 65536, 0, 393211, 65536, 0, 393210, 65536, 0, 327674, 65536, 0, 327675, 65536, 0, 327676, 65536, 0, 327677, 65536, 0, 327673, 65536, 0, 327672, 65536, 0, 327671, 65536, 0, 262141, 65536, 0, 262140, 65536, 0, 262139, 65536, 0, 262138, 65536, 0, 262137, 65536, 0, 262136, 65536, 0, 327670, 65536, 0, 393207, 0, 0, 393206, 65536, 0, 393205, 0, 0, 393208, 65536, 0, 393209, 65536, 0, 262154, 0, 1, 393220, 65536, 0, 393219, 65536, 0, 393218, 65536, 0, 262156, 0, 1, 262143, 65536, 0, 262142, 65536, 0, 393204, 65536, 0, 393224, 65536, 1, 458745, 65536, 1, 458742, 0, 1, 524282, 65536, 0, 524280, 65536, 0, 589817, 65536, 0, 524281, 65536, 0, 720889, 65536, 0, 655353, 65536, 0, 786425, 0, 1, 786424, 0, 1, 720888, 65536, 0, 720887, 65536, 0, 655351, 65536, 0, 720886, 65536, 0, 655350, 65536, 0, 786420, 0, 1, 720884, 0, 1, 786418, 0, 1, 720882, 0, 1, 589812, 0, 1, 524276, 0, 1, 589810, 0, 1, 524274, 0, 1, 327666, 0, 1, 262130, 0, 1, 655366, 0, 1, 589830, 0, 1, 720902, 0, 1, 720903, 0, 1, 655367, 0, 1, 655364, 0, 1, 720900, 0, 1, 720899, 0, 1, 720901, 0, 1, 655363, 0, 1, 655362, 0, 1, 655365, 0, 1, 655361, 0, 1, 720897, 0, 1, 720896, 0, 1, 786431, 0, 1, 786430, 0, 1, 786429, 0, 1, 786428, 0, 1, 786427, 0, 1, 720891, 0, 1, 720892, 0, 1, 720893, 0, 1, 720894, 0, 1, 720895, 0, 1, 786426, 0, 1, 655372, 0, 1, 655373, 0, 1, 589837, 0, 1, 524301, 0, 1, 524302, 0, 1, 458766, 0, 1, 589836, 0, 1, 655371, 0, 1, 589835, 0, 1, 524300, 0, 1, 458765, 0, 1, 393230, 0, 1, 327694, 65536, 0, 262158, 0, 1, 262157, 65536, 0, 196621, 65536, 0, 196622, 65536, 0, 589831, 0, 1, 589832, 0, 1, 524296, 0, 1, 589827, 0, 1, 589826, 0, 1, 589825, 0, 1, 589824, 0, 1, 655359, 0, 1, 655358, 0, 1, 655357, 0, 1, 655356, 0, 1, 655355, 0, 1, 589820, 0, 1, 589821, 0, 1, 589822, 0, 1, 589823, 0, 1, 524287, 0, 1, 458752, 0, 1, 393216, 0, 1, 458751, 0, 1, 524286, 0, 1, 524285, 0, 1, 524284, 0, 1, 458749, 0, 1, 458748, 0, 1, 458747, 0, 1, 524283, 0, 1, 589813, 0, 1, 524277, 0, 1, 524278, 0, 1, 262155, 0, 1, 196620, 0, 1, 196595, 65536, 0, 262134, 65536, 0, 262135, 65536, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, 505)
@@ -446,20 +550,31 @@ autostart = true
 curve = SubResource("Curve2D_bgthr")
 
 [node name="FlowerSpawnLocation" type="PathFollow2D" parent="FlowerSpawn"]
-position = Vector2(2815, -164)
-rotation = -3.14087
+position = Vector2(1739.35, 22)
+rotation = -3.13909
+
+[node name="ElephantSpawn" type="Path2D" parent="."]
+position = Vector2(41.0836, -310)
+scale = Vector2(0.972729, 1)
+curve = SubResource("Curve2D_bgthr")
+
+[node name="ElephantSpawnLocation" type="PathFollow2D" parent="ElephantSpawn"]
+position = Vector2(1739.35, 22)
+rotation = -3.13909
 
 [node name="Stage" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_od68g")
 format = 2
 layer_0/tile_data = PackedInt32Array(131060, 0, 0, 131061, 65536, 0, 131062, 131072, 0, 131063, 196608, 0, 131064, 262144, 0, 131065, 327680, 0, 131066, 393216, 0, 131067, 458752, 0, 131068, 524288, 0, 131069, 589824, 0, 131070, 655360, 0, 131071, 720896, 0, 196597, 65536, 1, 196598, 131072, 1, 262134, 131072, 2, 196599, 196608, 1, 262135, 196608, 2, 327671, 196608, 3, 196600, 262144, 1, 262136, 262144, 2, 196601, 327680, 1, 262137, 327680, 2, 327673, 327680, 3, 196602, 393216, 1, 262138, 393216, 2, 327674, 393216, 3, 196603, 458752, 1, 262139, 458752, 2, 327675, 458752, 3, 196604, 524288, 1, 262140, 524288, 2, 327676, 524288, 3, 196605, 589824, 1, 262141, 589824, 2, 327677, 589824, 3, 196606, 655360, 1, 262142, 655360, 2, 327678, 655360, 3, 196607, 720896, 1, 327679, 720896, 3, 131073, 393216, 131072, 196609, 393216, 131073, 327672, 262144, 3, 262143, 720896, 2, 65536, 327680, 1, 65547, 65536, 393217, 131082, 131072, 327682, 131081, 196608, 393218, 196617, 196608, 262147, 262144, 589824, 131075, 262146, 458752, 262147, 262145, 524288, 196611, 196616, 327680, 3, 196615, 262144, 3, 196614, 393216, 196611, 196613, 196608, 393218, 262149, 196608, 262147, 262147, 393216, 196611, 262148, 262144, 196611, 65546, 327680, 1, 65545, 589824, 2, 65544, 524288, 2, 131080, 327680, 0, 196608, 327680, 0, 131072, 524288, 2, 131074, 589824, 131072, 196610, 589824, 131073, 131075, 524288, 131072, 196611, 524288, 131073, 196612, 327680, 0, 65542, 589824, 131074, 65541, 524288, 131074, 131076, 131072, 262145, 131077, 262144, 1, 131078, 327680, 2, 65537, 524288, 2, 65538, 589824, 2, 65539, 393216, 2, 65540, 458752, 2, 131079, 327680, 1, 65543, 131072, 262145, 65525, 65537, 0, 65526, 65537, 0, 65527, 65537, 0, 65528, 65537, 0, 65529, 65537, 0, 65530, 65537, 0, 65531, 65537, 0, 65532, 65537, 0, 65533, 65537, 0, 65534, 65537, 0, 65535, 65537, 0, 0, 65537, 0, 1, 65537, 0, 2, 65537, 0, 3, 65537, 0, 4, 65537, 0, 5, 65537, 0, 6, 65537, 0, 7, 65537, 0, 8, 65537, 0, 9, 65537, 0, 10, 65537, 0, 11, 131073, 0, 65524, 1, 0)
 
-[node name="Turtle" type="Sprite2D" parent="."]
-position = Vector2(-40, 1621)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_kq1tf")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_0k0lq")
+
+[node name="Turtle" type="AnimatedSprite2D" parent="."]
+position = Vector2(-53, 1621)
+scale = Vector2(0.237412, 0.237412)
+sprite_frames = SubResource("SpriteFrames_cvvw3")
+frame = 6
+frame_progress = 0.382903
 
 [connection signal="timeout" from="Flowertimer" to="." method="_on_flowertimer_timeout"]
