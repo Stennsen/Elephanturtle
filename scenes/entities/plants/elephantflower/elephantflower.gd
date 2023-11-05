@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if progress >= 1000:
+	if progress >= 3000:
 		is_growing = false
 	if is_growing:
 		progress += 1
