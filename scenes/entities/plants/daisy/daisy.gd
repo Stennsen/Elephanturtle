@@ -5,6 +5,12 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+'''signal flower_cropped
+
+func _on_interaction():
+	# Your logic for handling the interaction (e.g., play animations, effects, etc.)
+	# Then, emit the signal to indicate that the flower has been cropped
+	emit_signal("flower_cropped")'''
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

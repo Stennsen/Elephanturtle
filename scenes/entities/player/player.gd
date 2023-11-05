@@ -42,12 +42,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-
-		
-
-
 func _on_plant_1_body_entered(body):
 	if body.is_in_group("Ghost"):
-		print("touched plant - could be cropped with E")
-		
-			
+		print("daisy: can be cropped with E")
