@@ -16,6 +16,7 @@ func _on_interaction():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func destroy_area():
 	queue_free()
+
 func _input(event):
 	if event.is_action_pressed("crop"):  # Check if the "E" key is pressed
 		crop_sound.play()
