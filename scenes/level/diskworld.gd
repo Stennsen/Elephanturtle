@@ -8,7 +8,13 @@ const INBALANCE_MOVEMENT_DIVIDER = 100	# dictates the tipping speed of the platf
 const DAISY_MAX_TIMER = 60*10 # The Maximum amount of time between daisy spawns
 const DAISY_MIN_TIMER = 10*10 # The Maximum amount of time between daisy spawns
 
+const ELEPHANT_MAX_TIMER = 60*30 # The Maximum amount of time between daisy spawns
+const ELEPHANT_MIN_TIMER = 10*30 # The Maximum amount of time between daisy spawns
+const ELEPHANT_WEIGHT = 0.05
+
+
 @export var daisy_scene: PackedScene
+@export var elephant_scene: PackedScene
 @onready var crop_sound = $AudioStreamPlayer2D
 @onready var spawn_sound = $spawn_sound_file
 @onready var unbalanced_sound = $unbalanced_sound
@@ -18,12 +24,16 @@ const DAISY_MIN_TIMER = 10*10 # The Maximum amount of time between daisy spawns
 # tracks the balance of the world
 var balance = -0.45;
 var daisy_countdown = 0
+var elephant_countdown = 0
 var random = RandomNumberGenerator.new()
 
+var finished = false
+
 var flower_list = []
-var played_unbalanced_sound = false
-var played_balanced_sound = false
-var balance_sign = 1
+var elephant_list = []
+#var played_unbalanced_sound = false
+#var played_balanced_sound = false
+#var balance_sign = 1
 func calculate_balance():
 	var total_weight = 0
 	for flower in flower_list:
@@ -32,9 +42,16 @@ func calculate_balance():
 			total_weight += ZONE_MODIFIERS[flower_zone] * flower.WEIGHT
 		else:
 			total_weight -= ZONE_MODIFIERS[flower_zone] * flower.WEIGHT
+	for elephant in elephant_list:
+		var elephant_zone = int(elephant.global_position.x/ZONE_SPACING)
+		if elephant_zone < 0:
+			total_weight += ZONE_MODIFIERS[elephant_zone] * ELEPHANT_WEIGHT
+		else:
+			total_weight -= ZONE_MODIFIERS[elephant_zone] * ELEPHANT_WEIGHT
+
 	
 	balance = total_weight
-	var rndnmbr = random.randf_range(0,50)
+	#var rndnmbr = random.randf_range(0,50)
 	
 	
 
@@ -83,12 +100,30 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	spawn_timer()
-	calculate_balance()
-	rotate_camera()
+	if not finished:
+		get_node("RabbitDead").hide()
+		get_node("Turtle").play("default")
+		spawn_timer()
+		calculate_balance()
+		rotate_camera()
+		print(get_node("Player").global_position.x)
+	if (abs(balance) > MAX_INBALANCE):
+		finish_game()
+	if (abs(get_node("Player").global_position.x)) > 3100:
+		finish_game()
+	if (len(elephant_list) >= 4):
+		finish_game()
+	pass
+
+
+func finish_game():
+	finished = true
+	get_node("RabbitDead").show()
+	get_node("Player").hide()
 
 func spawn_timer():
 	daisy_timer()
+	elephant_timer()
 
 func daisy_timer():
 	if daisy_countdown <= 0:
@@ -109,12 +144,26 @@ func spawn_flower():
 	flower_list.push_back(daisy)
 	print(flower_list)
 	spawn_sound.play()
-	add_child(daisy)
+	get_node("Daisies").add_child(daisy)
 	
+func spawn_elephant():
+	var daisy = elephant_scene.instantiate()
+	var daisy_spawn_location = get_node("ElephantSpawn/ElephantSpawnLocation")
+	var direction = daisy_spawn_location.rotation + PI
+	daisy_spawn_location.progress_ratio = randf()
+	daisy.position = daisy_spawn_location.position
+	daisy.rotation = direction
+	elephant_list.push_back(daisy)
+	get_node("Elephants").add_child(daisy)
 	
 
-func _on_flowertimer_timeout():
-	pass # Replace with function body.
+func elephant_timer():
+	if elephant_countdown <= 0:
+		spawn_elephant()
+		elephant_countdown = random.randi_range(ELEPHANT_MIN_TIMER, ELEPHANT_MAX_TIMER)
+	else:
+		elephant_countdown -= 1
+
 
 
 func _on_border_right_body_entered(body):

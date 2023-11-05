@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn57f20wfiwpi"
-path="res://.godot/imported/Title.png-64c8dbd3963db42a305a255829d18c25.ctex"
+uid="uid://rcvjfifl5c1r"
+path="res://.godot/imported/231105_FGJ_turtle_animation_upscaled_00001.png-a4bd1a4536282b77f69933e477d8ec29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/level/Title.png"
-dest_files=["res://.godot/imported/Title.png-64c8dbd3963db42a305a255829d18c25.ctex"]
+source_file="res://assets/graphics/level/231105_turtle_animation_upscaled/231105_FGJ_turtle_animation_upscaled_00001.png"
+dest_files=["res://.godot/imported/231105_FGJ_turtle_animation_upscaled_00001.png-a4bd1a4536282b77f69933e477d8ec29.ctex"]
 
 [params]
 
