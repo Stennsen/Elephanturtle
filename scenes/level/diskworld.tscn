@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/level/diskworld.gd" id="1_buow7"]
 [ext_resource type="Texture2D" uid="uid://c0lxpelb6535w" path="res://assets/graphics/level/tileset.png" id="2_f2qoh"]
 [ext_resource type="PackedScene" uid="uid://c2gp01ppn3bs2" path="res://scenes/entities/player/player.tscn" id="3_08eds"]
-[ext_resource type="PackedScene" uid="uid://5161kjoqnjdg" path="res://scenes/entities/plants/daisy/daisy.tscn" id="4_15r1e"]
+[ext_resource type="PackedScene" uid="uid://5161kjoqnjdg" path="res://scenes/entities/plants/elephantflower/elephantflower.tscn" id="4_15r1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn7e4"]
 texture = ExtResource("2_f2qoh")
