@@ -20,5 +20,5 @@ func _on_interaction():
 func _input(event):
 	if event.is_action_pressed("crop"):  # Check if the "E" key is pressed
 		crop_sound.play()
-		destroy_area()
+		queue_free()
 		print("cropped")
