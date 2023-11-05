@@ -9,6 +9,7 @@ const DAISY_MAX_TIMER = 60*10 # The Maximum amount of time between daisy spawns
 const DAISY_MIN_TIMER = 10*10 # The Maximum amount of time between daisy spawns
 
 @export var daisy_scene: PackedScene
+@onready var crop_sound = $AudioStreamPlayer2D
 
 # tracks the balance of the world
 var balance = -0.45;
@@ -20,6 +21,8 @@ var flower_list = []
 func calculate_balance():
 	var total_weight = 0
 	for flower in flower_list:
+		if flower:
+			continue
 		var flower_zone = int(flower.global_position.x/ZONE_SPACING)
 
 		if flower_zone < 0:
@@ -28,8 +31,17 @@ func calculate_balance():
 			total_weight -= ZONE_MODIFIERS[flower_zone] * flower.WEIGHT
 	
 	balance = total_weight
-
-
+func _on_Daisy_body_entered(body: PhysicsBody2D) -> void:
+	if body.name == "Player":
+		# Connect the daisy to the player
+		body.crop.connect(self._on_crop_daisy)
+func _on_crop_daisy(daisy: Node) -> void:
+	# Remove the daisy from the scene
+	daisy.queue_free()
+	# Play the corresponding audio
+	crop_sound.play()
+	flower_list.remove_at(flower_list.find(daisy))
+	
 func rotate_camera():
 	var camera = get_node("Camera2D")
 	var cur_rotation = camera.global_rotation
@@ -75,3 +87,8 @@ func spawn_flower():
 	flower_list.push_back(daisy)
 	print(flower_list)
 	add_child(daisy)
+	
+	
+
+func _on_flowertimer_timeout():
+	pass # Replace with function body.

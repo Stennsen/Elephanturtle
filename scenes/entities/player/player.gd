@@ -10,25 +10,23 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var original_position
 
 @onready var ghost_sprite = $Ghost
+@onready var animation_player = $AnimationPlayer
 
-
-func _ready():
-	original_position = position
-
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("crop"):
+		# Get the list of daisies
+		var dw = get_tree().get_first_node_in_group("Disc World")
+		var daisies = dw.flower_list
+		if daisies != null:
+			# Loop through the daisies
+			for daisy in daisies:
+				# Check if the player is colliding with the daisy
+				if daisy.overlaps_area(get_node("Area2D")):
+					# Emit the "crop" signal
+					dw._on_crop_daisy(daisy)
 func _physics_process(delta):
-	# Add the gravity.
-	'''if not is_on_floor():
-		velocity.y += gravity * delta'''
-
-	# floating by moving the sprite up and down
-	
-	
-	
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
-	
+	animation_player.play("float")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -40,14 +38,4 @@ func _physics_process(delta):
 		ghost_sprite.flip_h = true 
 
 	move_and_slide()
-
-
-
-		
-
-
-func _on_plant_1_body_entered(body):
-	if body.is_in_group("Ghost"):
-		print("touched plant - could be cropped with E")
-		
-			
+	

@@ -2,21 +2,20 @@ extends Area2D
 
 const WEIGHT = 0.1
 
-@onready var crop_sound = $crop_sound
+@onready var crop_sound = $AudioStreamPlayer2D
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+signal daisy_interacted()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func destroy_area():
-	queue_free()
-
-func _input(event):
+'func _on_area_entered(area):
+	if area.has_method("_on_daisy_interacted"):
+		emit_signal("daisy_interacted",self)'
+		
+'func _input(event):
 	if event.is_action_pressed("crop"):  # Check if the "E" key is pressed
 		crop_sound.play()
-		destroy_area()
-		print("cropped")
-
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	queue_free()
+		get_tree().call_group("Daisy", "destroy")
+		# Remove the object from the group
+		remove_from_group("Daisy")
+		# Destroy the object
+		queue_free()'
