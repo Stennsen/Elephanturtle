@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dbjejb4n80hw7" path="res://assets/graphics/level/gras.png" id="4_5d41t"]
 [ext_resource type="Script" path="res://scenes/entities/plants/daisy/daisy.gd" id="4_hyvn4"]
 [ext_resource type="AudioStream" uid="uid://csc7ib68hputh" path="res://scenes/entities/plants/daisy/stepping_on_leaf.wav" id="5_lb1x2"]
-[ext_resource type="PackedScene" uid="uid://dx3ap5ow707py" path="res://scenes/entities/plants/daisy/daisy.tscn" id="9_rscom"]
+[ext_resource type="PackedScene" uid="uid://dx3ap5ow707py" path="res://scenes/entities/plants/elephantflower/elephantflower.tscn" id="9_rscom"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cm3h"]
 texture = ExtResource("2_qflb5")
